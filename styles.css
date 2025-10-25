@@ -1,0 +1,1082 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header Section */
+.header-section {
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-icons {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.top-icons i {
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.top-icons i:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-circle {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: 50%;
+    border: 3px solid #ffd700;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 2px 10px rgba(255, 215, 0, 0.1);
+    margin: 0 auto 2rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.logo-circle::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    animation: logoGlow 3s ease-in-out infinite;
+}
+
+.logo-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 2px 10px rgba(255, 215, 0, 0.2);
+}
+
+.logo-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.logo-main-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffd700;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-spade {
+    font-size: 2.2rem;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    margin: 0 0.1em;
+    display: inline-block;
+    animation: spadeGlow 2s ease-in-out infinite;
+}
+
+.logo-sub-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffd700;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+    filter: brightness(1.1);
+}
+
+.brand-name {
+    font-family: 'Khmer OS Koulen', 'Inter', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-family: 'Khmer OS Koulen', 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+/* Navigation Buttons */
+.nav-buttons-section {
+    padding: 3rem 0;
+    position: relative;
+}
+
+.nav-button {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 1.2rem 1.8rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.nav-button:hover::before {
+    left: 100%;
+}
+
+.nav-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-button i {
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover i {
+    transform: scale(1.1);
+}
+
+.hot-icon {
+    color: #ff6b6b;
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+.telegram-icon {
+    color: #0088cc;
+    text-shadow: 0 0 10px rgba(0, 136, 204, 0.5);
+}
+
+.facebook-icon {
+    color: #1877f2;
+    text-shadow: 0 0 10px rgba(24, 119, 242, 0.5);
+}
+
+/* Main Banner */
+.main-banner-section {
+    padding: 3rem 0;
+    position: relative;
+}
+
+.main-banner {
+    background-image: url('assets/images/Free SPIN.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 24px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.main-banner:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.banner-content {
+    position: relative;
+    height: 100%;
+}
+
+.banner-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
+    z-index: 1;
+}
+
+/* Left Side Circular Elements */
+.left-circular-elements {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.large-circle {
+    width: 140px;
+    height: 140px;
+    background: #fff;
+    border: 4px solid #ffd700;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.circle-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.percentage-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 2px 0;
+}
+
+.circle-images {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.circle-img {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    object-fit: cover;
+}
+
+.small-circle {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border: 3px solid #ffd700;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 30px;
+}
+
+.small-circle-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.floating-coins {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.coin {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    animation: float 3s ease-in-out infinite;
+    overflow: hidden;
+}
+
+.coin-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 50%;
+}
+
+.coin:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.coin:nth-child(2) {
+    top: 40%;
+    left: 5%;
+    animation-delay: 1s;
+}
+
+.coin:nth-child(3) {
+    top: 60%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.coin:nth-child(4) {
+    top: 30%;
+    left: 25%;
+    animation-delay: 0.5s;
+}
+
+/* Enhanced Modern Animations */
+@keyframes modernFloat {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: translateY(-15px) rotate(5deg);
+        opacity: 1;
+    }
+}
+
+@keyframes modernPulse {
+    0% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    70% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Right Side Speech Bubbles */
+.right-speech-bubbles {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.speech-bubble {
+    background: #d32f2f;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    margin-bottom: 1rem;
+    position: relative;
+    font-size: 1rem;
+    font-weight: bold;
+    max-width: 200px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #d32f2f;
+}
+
+.top-bubble {
+    margin-bottom: 1.5rem;
+}
+
+.bottom-bubble {
+    margin-bottom: 0;
+}
+
+/* Bottom Center Menu Icon */
+.bottom-menu-icon {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.menu-grid {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3px;
+    padding: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.grid-item {
+    background: #333;
+    border-radius: 2px;
+}
+
+/* Bottom Right Phone Mockup */
+.bottom-phone-mockup {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    width: 80px;
+    height: 140px;
+    background: #333;
+    border-radius: 15px;
+    padding: 5px;
+    z-index: 3;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.slot-machine-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.qr-code {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.qr-placeholder {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+/* Promotional Banners */
+.promo-banners-section {
+    padding: 3rem 0;
+    position: relative;
+}
+
+.square-1080 {
+    width: min(100%, 1080px);
+    aspect-ratio: 1 / 1;
+}
+
+.wide-1080 {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.square-1080.main-banner,
+.square-1080.promo-banner {
+    height: auto; /* driven by aspect-ratio */
+    min-height: 0;
+}
+
+.square-1080 .banner-content,
+.square-1080 .banner-bg {
+    inset: 0;
+}
+
+.promo-banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    padding: 2rem;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.promo-banner:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.floating-money {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dollar-bill {
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    animation: fall 4s linear infinite;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.money-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 3px;
+}
+
+.dollar-bill:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.dollar-bill:nth-child(2) {
+    left: 30%;
+    animation-delay: 1s;
+}
+
+.dollar-bill:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+}
+
+@keyframes fall {
+    0% { top: -20px; transform: rotate(0deg); }
+    100% { top: 100%; transform: rotate(360deg); }
+}
+
+.gold-coin {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    animation: float 3s ease-in-out infinite;
+    overflow: hidden;
+}
+
+.gold-coin:nth-child(4) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.gold-coin:nth-child(5) {
+    top: 40%;
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.gold-coin:nth-child(6) {
+    top: 60%;
+    left: 40%;
+    animation-delay: 2s;
+}
+
+/* Casino Banner - Now using full-frame background */
+
+.banner-text-content {
+    text-align: center;
+    z-index: 3;
+    position: relative;
+}
+
+.banner-text-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.banner-text-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.special-offer {
+    background: linear-gradient(45deg, #ffd700, #ff9800);
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Football Banner - Now using full-frame background */
+
+.percentage-offer {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+    line-height: 1;
+    margin-top: 1rem;
+}
+
+/* Sports Banner - Now using full-frame background */
+
+/* Slot Banner - Now using full-frame background */
+
+/* Referral Banner - Now using full-frame background */
+
+/* Bottom Banner */
+.bottom-banner-section {
+    padding: 3rem 0;
+    position: relative;
+}
+
+.bottom-banner {
+    font-family: 'Khmer OS Koulen', 'Inter', sans-serif;
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.8) 0%, rgba(63, 81, 181, 0.8) 100%);
+    color: #fff;
+    padding: 1.5rem 2.5rem;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.bottom-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Side Navigation */
+.side-nav {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.nav-item {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.1) translateY(-2px);
+    color: #fff;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Modern Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-prev {
+    left: -25px;
+}
+
+.carousel-control-next {
+    right: -25px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Interactive Effects */
+.nav-button.clicked {
+    transform: scale(0.95);
+}
+
+.nav-button.focused {
+    outline: 2px solid #ffd700;
+    outline-offset: 2px;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.banner-hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.banner-click {
+    transform: scale(0.98);
+}
+
+.promo-banner.fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-item.pulse {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.nav-button.mobile-active {
+    background: #ffd700;
+    color: #333;
+    transform: scale(1.05);
+}
+
+/* Loading animations */
+.header-section, .nav-buttons-section, .main-banner-section, .promo-banners-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.header-section.loaded, .nav-buttons-section.loaded, .main-banner-section.loaded, .promo-banners-section.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Additional Modern Enhancements */
+.nav-button span {
+    font-family: 'Khmer OS Koulen', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.brand-name {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #e9ecef 50%, #ffffff 75%, #f8f9fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Modern Loading States */
+.loading-shimmer {
+    background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Enhanced Focus States */
+.nav-button:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Logo Animations */
+@keyframes logoGlow {
+    0%, 100% { 
+        opacity: 0.3;
+        transform: rotate(0deg);
+    }
+    50% { 
+        opacity: 0.6;
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes spadeGlow {
+    0%, 100% { 
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+        transform: scale(1);
+    }
+    50% { 
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        transform: scale(1.1);
+    }
+}
+
+/* Modern Responsive Design */
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .nav-button {
+        padding: 1rem 1.2rem;
+        font-size: 0.95rem;
+        border-radius: 12px;
+    }
+    
+    .main-banner {
+        padding: 1.5rem;
+        min-height: 300px;
+        border-radius: 16px;
+    }
+    
+    .promo-banner {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+    
+    .side-nav {
+        right: 15px;
+    }
+    
+    .nav-item {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .logo-circle {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-section {
+        padding: 2rem 0;
+    }
+    
+    .logo-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .brand-name {
+        font-size: 1.8rem;
+    }
+    
+    .nav-buttons-section {
+        padding: 2rem 0;
+    }
+    
+    .main-banner-section {
+        padding: 2rem 0;
+    }
+    
+    .promo-banners-section {
+        padding: 2rem 0;
+    }
+    
+    .bottom-banner-section {
+        padding: 2rem 0;
+    }
+    
+    .nav-button {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .side-nav {
+        right: 10px;
+    }
+    
+    .nav-item {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 10px;
+    }
+}
